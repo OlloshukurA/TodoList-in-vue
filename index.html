@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="todo">
+        <div class="container">
+            <input type="text" placeholder="" v-model="taskName" @keyup.enter = "addTask()">
+            <button @click="addTask()">{{btn}}</button>
+    
+        </div>
+        <div class="list">
+            <p v-for="(task, index) in tasks" :key="index" >
+                {{task.title}}
+
+                <box-icon name='checkbox-minus' type='solid' color='#8552ec' @click="deleteFromList(index)"></box-icon>
+                
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
